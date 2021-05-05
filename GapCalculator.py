@@ -10,6 +10,7 @@ def count(x):
   for i in range(0,len(x)):
     contagem.append((i))
   return contagem
+
 def start(t:str):
   dna=list(t)
   return zip(dna,dnagap(dna), count(dna))

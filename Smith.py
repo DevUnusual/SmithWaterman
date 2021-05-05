@@ -9,12 +9,13 @@ dnaB = gap.start(dnaB)
 def Criarmatriz(a, b):
   temporario = []
   matriz = []
-  for i in a:
+  list_a = list(a)
+  list_b = list(b)
+  for i in list_a:
     print("i" + str(i))
-    for j in b:
+    for j in list_b:
       print('j'+ str(j))
       temporario.append(i + j)
-    # print(temporario)
     matriz.append(temporario)
     temporario = []
   return matriz
