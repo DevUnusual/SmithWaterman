@@ -1,1 +1,0 @@
-al" + str(CelDiagonal))
