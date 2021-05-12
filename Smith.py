@@ -1,10 +1,10 @@
 import GapCalculator as gap
-from Matricization import Criarmatriz
+import Matricization as Matriz
 
 dnaA = "tgcccaagtgctgccaaa"
 dnaB = "gcctagtccatgatggta"
 dnaA = gap.start(dnaA)
 dnaB = gap.start(dnaB)
-table = Criarmatriz(dnaA, dnaB)
+table = Matriz(dnaA, dnaB)
 
 print(table)
