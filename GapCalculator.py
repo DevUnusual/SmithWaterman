@@ -1,7 +1,7 @@
-def dnagap(t):
+def dnagap(t, gap):
   tempgap = []
   for i in range(0, len(t)):
-    x= (i + 1) * -2
+    x= (i + 1) * gap
     tempgap.append(x)
   return tempgap
 
