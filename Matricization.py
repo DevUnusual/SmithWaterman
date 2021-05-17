@@ -12,7 +12,7 @@ class Criarmatriz():
 
   def cellAroundExist(self, posA, posB):
     CellAround =[] #é para guardar as celulas [horizontal, vertical, diagonal]
-    if posA == posB == 0: return CellAround[0,0,0]
+    if posA[0] == 0 and posB[0] == 0: return CellAround[0,0,0]
     if posA >=1:
       if posB >=1:
         CellAround.append(self.matriz[posA-1, posB]) #esquerda
@@ -31,10 +31,24 @@ class Criarmatriz():
 
   def calculateAround(parametros, posA, posB):
     #calcula as celulas ao redor volta o maximo e o caminho para chegar no maximo
-  if parametros[0] != 0:
-    esquerda = self.matriz[]
-  if parametros[1] != 0:
-  if parametros[2] != 0:
+    if parametros[0] != 0:
+      esquerda = parametros[0].getMax() + self.gap
+    if parametros[1] != 0:
+      vertical = parametros[1].getMax() + self.gap
+    if parametros[2] != 0:
+      if self.list_a[posA] == self.list_b[posB]:
+        diagonal = parametros[2].getMax() + self.match
+      else:
+        diagonal = parametros[2].getMax() + self.mismatch
+    resultados = [esquerda,vertical,diagonal]     
+    resultados.sort(reverse= True)
+    if resultados[0] == esquerda:
+      caminho = caminhos.append('-') 
+    if resultados[0] == vertical:
+      caminho = caminhos.append('|') 
+    if resultados[0] == diagonal:
+      caminho = caminhos.append('/') 
+    return [resultados[0],caminho]
 
   def makeMatrizFromList(self):
     resultado = [] #vai contar max e caminho [maximo,[caminhos(-/|)]]
@@ -42,6 +56,9 @@ class Criarmatriz():
     for i in self.list_a:
       for j in self.list_b:
         resultado = self.calculateAround(self.cellAroundExist(i[2],j[2]), i, j) #volta a lista de celulas ao redor e calcula o maior
+        LinesForMatriz.append(celula(i[0],j[0],resultado))
+      self.matriz.append(LinesForMatriz)
+      LinesForMatriz = []
         #calcular os valores para definir o maior valor
 
 

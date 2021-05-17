@@ -5,3 +5,9 @@ class celula:
     self.letterB = B[0]
     self.Max = [parametros[0], parametros[1]]
     self.posicao = [parametros[2], parametros[3]]
+  
+  def setMax(parametros):
+    self.Max = [parametros[0], parametros[1]]
+  
+  def getMax():
+    return self.Max[0]

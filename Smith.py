@@ -1,5 +1,5 @@
 import GapCalculator as gap
-import Matricization as Matriz
+from Matricization import Criarmatriz as Matriz
 
 dnaA = "tgcccaagtgctgccaaa"
 dnaB = "gcctagtccatgatggta"

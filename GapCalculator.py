@@ -11,6 +11,6 @@ def count(x):
     contagem.append((i))
   return contagem
 
-def start(t:str):
+def start(t:str, gap):
   dna=list(t)
-  return zip(dna,dnagap(dna), count(dna))
+  return zip(dna,dnagap(dna,gap), count(dna))
