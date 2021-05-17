@@ -6,8 +6,8 @@ class celula:
     self.Max = [parametros[0], parametros[1]]
     self.posicao = [parametros[2], parametros[3]]
   
-  def setMax(parametros):
+  def setMax(self,parametros):
     self.Max = [parametros[0], parametros[1]]
   
-  def getMax():
+  def getMax(self):
     return self.Max[0]
