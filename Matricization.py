@@ -35,15 +35,26 @@ class Criarmatriz():
 
   def calculateAround(self,parametros, posA, posB):
     esquerda = vertical = diagonal = 0
+    first = False
+    if parametros == [0,0,0]:
+      if self.list_a[posA] == self.list_b[posB]:
+        diagonal == 0 + self.match
+      else:
+        diagonal = 0 + self.mismatch
+      first = True
     #calcula as celulas ao redor volta o maximo e o caminho para chegar no maximo
     if parametros[0] != 0:
-      esquerda = parametros[0].getMax() + self.gap
+      esquerda = self.matriz[posA-1][posB].getMax() + self.gap
+    elif parametros[0] ==0 and first == False:
+      esquerda = 0 + self.gap * posA
     if parametros[1] != 0:
-      vertical = parametros[1].getMax() + self.gap
-    if self.list_a[posA] == self.list_b[posB]:
-      diagonal = parametros[2].getMax() + self.match
-    else:
-      diagonal = parametros[2].getMax() + self.mismatch
+      vertical = self.matriz[posA][posB-1].getMax() + self.gap
+    elif parametros[1]==0 and first ==False:
+      vertical = 0 + self.gap * posB
+    if self.list_a[posA] == self.list_b[posB] and first == False:
+      diagonal = self.matriz[posA-1][posB-1].getMax() + self.match
+    elif self.list_a[posA] != self.list_b[posB] and first == False:
+      diagonal = self.matriz[posA-1][posB-1].getMax() + self.mismatch
     resultados = [esquerda,vertical,diagonal]     
     resultados.sort(reverse= True)
     caminho = []
